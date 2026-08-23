@@ -1,86 +1,118 @@
-var modalInfo = {
-  1: {
-    title: "Project 1",
-    info: "...",
-    link: "#",
-    github: "#"
-  },
-  2: {
-    title: "Project 2",
-    info: "...",
-    link: "#",
-    github: "#"
-  },
-  3: {
-    title: "Project 3",
-    info: "...",
-    link: "#",
-    github: "#"
-  },
-  4: {
-    title: "Project 4",
-    info: "....",
-    link: "#",
-    github: "#"
-  },
-  5: {
-    title: "Project 5",
-    info: "...",
-    link: "#",
-    github: "#"
-  },
-  6: {
-    title: "Project 6",
-    info: "...",
-    link: "#",
-    github: "#"
-  }
-};
+document.addEventListener('DOMContentLoaded', () => {
 
-// Get the modal
-var modal = document.getElementById('preview');
+    /* ==========================================
+       1. Mobile Hamburger Navigation
+       ========================================== */
+    /* ==========================================
+   1. Mobile Hamburger Navigation
+   ========================================== */
+const hamburgerBtn = document.getElementById('hamburgerBtn');
+const navMenu = document.getElementById('navMenu');
+const menuOverlay = document.getElementById('menuOverlay');
 
-// button that opens the modal
-var btn = document.getElementsByClassName("button");
-
-// <span> that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// open modal 
-for(let i = 0; i < btn.length; i++){
-  btn[i].addEventListener("click", function() {
-    var project = btn[i].parentElement;
-    openModal(project);
-  })
-};
-
-function openModal(project){
-  var id = project.id;
-  var img = project.getElementsByTagName("img")[0].src;
-  fillOut(id, img);
-  modal.style.display = "block";
-  document.getElementsByClassName("modal-content")[0].classList.add("scale");
-}
-
-function fillOut(id, img){
-  document.getElementById("title").innerHTML = modalInfo[id].title;
-  document.getElementById("info").innerHTML = modalInfo[id].info;
-  document.getElementById("img").src = img;
-  document.getElementById("live").onclick = function(){
-    window.open(modalInfo[id].link,'_blank');
-  }
-  document.getElementById("github").onclick = function(){
-    window.open(modalInfo[id].github,'_blank');
-  }
-}
-
-// close the modal
-span.onclick = function() {
-    modal.style.display = "none";
-}
-
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+function closeMobileMenu() {
+    if (navMenu) navMenu.classList.remove('active');
+    if (menuOverlay) menuOverlay.classList.remove('active');
+    const icon = hamburgerBtn ? hamburgerBtn.querySelector('i') : null;
+    if (icon) {
+        icon.classList.add('fa-bars');
+        icon.classList.remove('fa-xmark');
     }
 }
+
+if (hamburgerBtn && navMenu) {
+    hamburgerBtn.addEventListener('click', () => {
+        const isOpen = navMenu.classList.toggle('active');
+        if (menuOverlay) menuOverlay.classList.toggle('active');
+        
+        const icon = hamburgerBtn.querySelector('i');
+        if (icon) {
+            if (isOpen) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-xmark');
+            }
+        }
+    });
+
+    // Close menu when clicking outside on the dark overlay
+    if (menuOverlay) {
+        menuOverlay.addEventListener('click', closeMobileMenu);
+    }
+
+    // Close menu when clicking a link
+    const navLinks = navMenu.querySelectorAll('a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
+    });
+}
+
+    /* ==========================================
+       2. Diensten Interactive Cards
+       ========================================== */
+    const cards = document.querySelectorAll('.card01');
+    const imageContainer = document.getElementById('dienstenImage');
+
+    if (cards.length && imageContainer) {
+        // Load initial active card image
+        const activeCard = document.querySelector('.card01.active') || cards[0];
+        if (activeCard && activeCard.dataset.image) {
+            imageContainer.style.backgroundImage = `url('${activeCard.dataset.image}')`;
+        }
+
+        // Add event handlers to change background dynamically
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+                cards.forEach(c => c.classList.remove('active'));
+                card.classList.add('active');
+
+                const newImage = card.dataset.image;
+                if (newImage) {
+                    imageContainer.style.backgroundImage = `url('${newImage}')`;
+                }
+            });
+        });
+    }
+
+    /* ==========================================
+       3. Project Preview Modal
+       ========================================== */
+    const modal = document.getElementById('preview');
+    const modalImg = document.getElementById('img');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalInfo = document.getElementById('info');
+    const closeModal = document.getElementById('closeModal');
+    const projectItems = document.querySelectorAll('.projectenPage .item');
+
+    if (modal && projectItems.length) {
+        projectItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const img = item.querySelector('img');
+                const title = item.querySelector('h3');
+                const infoText = item.dataset.info || "Bekijk hier de details van dit project.";
+
+                if (img) modalImg.src = img.src;
+                if (title) modalTitle.textContent = title.textContent;
+                if (modalInfo) modalInfo.textContent = infoText;
+
+                modal.classList.add('active');
+            });
+        });
+
+        // Close modal on X button click
+        if (closeModal) {
+            closeModal.addEventListener('click', () => {
+                modal.classList.remove('active');
+            });
+        }
+
+        // Close modal when clicking dark overlay background
+        window.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+    }
+});

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 
 <head>
     <!-- Essential Character Encoding & Viewport for Mobile Responsiveness -->
@@ -7,242 +7,216 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Page Title shown in the browser tab -->
-    <title>My Simple Website</title>
+    <title>Tuinrealisaties Van Craen</title>
 
-    <!-- Link to external CSS stylesheet -->
-    <script src="script.js"></script>
+    <!-- External Stylesheets & Scripts -->
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 
+    <!-- Script loaded with defer so DOM renders before script runs -->
+    <script src="script.js" defer></script>
 </head>
 
 <body>
     <header>
-        <div class="Logo"><img src="FullLogo.svg"/></div>
+        <div class="Logo">
+            <img src="FullLogo.svg" alt="Tuinrealisaties Van Craen Logo" />
+        </div>
 
-        <ul class="HeaderElements">
+        <!-- Mobile Hamburger Icon -->
+        <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <ul class="HeaderElements" id="navMenu">
             <li class="Headerhead"><a href="#home">Home</a></li>
             <li class="Headerhead"><a href="#over">Over</a></li>
             <li class="Headerhead"><a href="#diensten">Diensten</a></li>
             <li class="Headerhead"><a href="#projecten">Projecten</a></li>
+            <li class="HeaderheadContact"><a href="#contact">Contact</a></li>
         </ul>
     </header>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+
     <div id="home" class="content">
-        <div class="homePage">
-            <div class="MainText">Een sprong vooruit <br> in uw tuin</div>
-            <div class="SmallText">Lorem ipsum dolor sit amet consectetur,
-                adipisicing elit. Saepe est ratione quia accusantium,
-                eum minus ea explicabo perferendis cupiditate similique quasi.
-                Perspiciatis dicta porro atque veniam quod adipisci tempora optio!</div>
-        </div>
-        <div id="over" class="aboutPage">
+        <section class="homePage">
+            <div class="MainText">Een sprong vooruit <br> in <span class="mainTextColor">uw tuin</span></div>
+            <div class="SmallText">
+                Van de kleinste snoeiwerken tot complete aanleg projecten: elk project krijgt dezelfde aandacht en zorg.
+                Een nieuw terras, een waterdoorlatende oprit, het onderhoud van je tuin of de aanleg van een idyllische zwemvijver?
+                Ik help je graag om jouw ideeën werkelijkheid te maken.
+            </div>
+        </section>
+
+        <section id="over" class="aboutPage">
             <div class="aboutImage">
-                <img src="Image01.webp" alt="FotoDylan">
+                <img src="Image01.webp" alt="Foto Dylan van Tuinrealisaties Van Craen">
             </div>
             <div class="textAbout">
                 <div class="aboutTitle">
-                    Ik ben dylan, gemotiveerd Lorem ipsum dolor
+                    Ik ben <span class="aboutTitleBlue">Dylan</span> van Tuinrealisaties Van Craen.
                 </div>
                 <div class="aboutInfo">
-                    Geboren te elzestraat Lorem ipsum dolor sit amet consectetur. Amet eu nunc sed augue scelerisque sed
-                    eu nec.
-                    Lorem ipsum dolor sit amet consectetur.
-                    Amet eu nunc sed augue scelerisque sed eu nec. Lorem ipsum dolor sit amet consectetur.
-                    Amet eu nunc sed augue scelerisque sed eu nec.
+                    Van de kleinste snoeiwerken tot complete aanleg projecten: elk project krijgt dezelfde aandacht en zorg.
+                    Een nieuw terras, een waterdoorlatende oprit, het onderhoud van je tuin of de aanleg van een idyllische zwemvijver? 
+                    Ik help je graag om jouw ideeën werkelijkheid te maken.
+                    <br><br>
+                    Daarbij voer ik niet alleen uit, maar denk ik ook graag met je mee. 
+                    Dankzij mijn ervaring bekijken we samen de mogelijkheden van jouw tuin en zoeken we naar een indeling die mooi, 
+                    praktisch én volledig op jouw wensen afgestemd is.
+                    <br><br>
+                    <strong>Jouw tuin, van idee tot realisatie.</strong>
                 </div>
             </div>
-        </div>
-        <div id="diensten" class="dienstenPage">
+        </section>
+
+        <section id="diensten" class="dienstenPage">
             <div class="miniTitle">
-                <img src="LogoIcon.svg"/>Onze Diensten
+                <img src="LogoIcon.svg" alt="Icon" />Onze Diensten
             </div>
             <div class="dienstenContent">
                 <div class="Cards">
-                    <div class="card01">
-                        <div class="cardTitle">
-                            Aanleg
-                        </div>
+                    <div class="card01 active" data-image="AanlegImage01.jpeg">
+                        <div class="cardTitle TitleFont">Aanleg</div>
                         <div class="cardUitleg">
-                            Van grondwerken en beplanting tot gazons, afsluitingen en de volledige realisatie van je tuin. 
+                            Van grondwerken en beplanting tot gazons, afsluitingen en de volledige realisatie van je tuin.
                         </div>
                     </div>
-                    <div class="card01">
-                        <div class="cardTitle">
-                            Verhardingen
-                        </div>
+
+                    <div class="card01" data-image="https://picsum.photos/id/28/800/600">
+                        <div class="cardTitle TitleFont">Verhardingen</div>
                         <div class="cardUitleg">
-                            Terrassen, tuinpaden en (waterdoorlatende) opritten in verschillende materialen. 
+                            Terrassen, tuinpaden en (waterdoorlatende) opritten in verschillende materialen.
                         </div>
                     </div>
-                    <div class="card01">
-                        <div class="cardTitle">
-                            Onderhoud
-                        </div>
+
+                    <div class="card01" data-image="OnderhoudImage01.jpeg">
+                        <div class="cardTitle TitleFont">Onderhoud</div>
                         <div class="cardUitleg">
-                            Snoeiwerken, aangepast bemestingsadvies, gazon onderhoud en periodiek onderhoud om je tuin het hele jaar mooi te houden. 
+                            Snoeiwerken, aangepast bemestingsadvies, gazon onderhoud en periodiek onderhoud.
                         </div>
                     </div>
-                    <div class="card01">
-                        <div class="cardTitle">
-                            Zwemvijver
-                        </div>
+
+                    <div class="card01" data-image="VerhardingenImage01.jpeg">
+                        <div class="cardTitle TitleFont">Zwemvijver</div>
                         <div class="cardUitleg">
-                            natuurlijke zwemvijvers op maat geïntegreerd in de omgeving van je tuin. 
+                            Natuurlijke zwemvijvers op maat geïntegreerd in de omgeving van je tuin.
                         </div>
                     </div>
                 </div>
 
-                <div class="imageDiensten">
-
-                </div>
+                <div class="imageDiensten" id="dienstenImage"></div>
             </div>
-        </div>
+        </section>
 
-
-        <div id="projecten" class="projectenPage">
-            <div class="dienstenTitle">
-                Onze Diensten
+        <section id="projecten" class="projectenPage">
+            <div class="miniTitle">
+                <img src="LogoIcon.svg" alt="Icon" />Onze Projecten
             </div>
 
             <div class="container">
-                <div class="item" id="1">
-                    <img src="https://images.unsplash.com/photo-1508124780861-b1687f9a13e5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f841d43a63c085e930aa5b6b33e89a9f&auto=format&fit=crop&w=1385&q=80"
-                        alt="">
+                <div class="item" id="project-1" data-info="Prachtig afgewerkt terras- en tuinproject met moderne beplanting.">
+                    <img src="https://images.unsplash.com/photo-1508124780861-b1687f9a13e5?auto=format&fit=crop&w=1385&q=80" alt="Project 1">
                     <div class="text">
-                        <h3>PROJECT 1</h4>
-                            <p>Korte Beschrijving</p>
+                        <h3>PROJECT 1</h3>
                     </div>
-
                 </div>
 
-                <div class="item" id="2">
-                    <img src="https://images.unsplash.com/photo-1496492352121-593138d42a61?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3542849cc0459345e3aa82a90ae51a01&auto=format&fit=crop&w=1350&q=80"
-                        alt="">
+                <div class="item" id="project-2" data-info="Aanleg van een strakke, waterdoorlatende oprit.">
+                    <img src="https://images.unsplash.com/photo-1496492352121-593138d42a61?auto=format&fit=crop&w=1350&q=80" alt="Project 2">
                     <div class="text">
-                        <h3>PROJECT 2</h4>
-                            <p>Short Description</p>
+                        <h3>PROJECT 2</h3>
                     </div>
-
                 </div>
 
-                <div class="item" id="3">
-                    <img src="https://images.unsplash.com/photo-1515215676803-119c88d493cf?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=baf00747bfb9fe41ad9af8cf00dbebbf&auto=format&fit=crop&w=1350&q=80"
-                        alt="">
+                <div class="item" id="project-3" data-info="Complete tuinrenovatie inclusief snoeiwerken en gazononderhoud.">
+                    <img src="https://images.unsplash.com/photo-1515215676803-119c88d493cf?auto=format&fit=crop&w=1350&q=80" alt="Project 3">
                     <div class="text">
-                        <h3>PROJECT 3</h4>
-                            <p>Short Description</p>
+                        <h3>PROJECT 3</h3>
                     </div>
-
                 </div>
 
-                <div class="item" id="4">
-                    <img src="https://images.unsplash.com/photo-1496939217462-7d42e9a74f0e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5e3be993a88feed38e4f5374ff3ba115&auto=format&fit=crop&w=1350&q=80g"
-                        alt="">
+                <div class="item" id="project-4" data-info="Sfeervolle ecologische zwemvijver met hardhouten vlonder.">
+                    <img src="https://images.unsplash.com/photo-1496939217462-7d42e9a74f0e?auto=format&fit=crop&w=1350&q=80" alt="Project 4">
                     <div class="text">
-                        <h3>PROJECT 4</h4>
-                            <p>Short Description</p>
+                        <h3>PROJECT 4</h3>
                     </div>
-
                 </div>
 
-                <div class="item" id="5">
-                    <img src="https://images.unsplash.com/photo-1504875427817-937a8a12e167?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cd7f399ba43093ead08e7dbf5e083f09&auto=format&fit=crop&w=1434&q=80"
-                        alt="">
+                <div class="item" id="project-5" data-info="Tuinaanleg met karakteristieke houten afsluiting.">
+                    <img src="https://images.unsplash.com/photo-1504875427817-937a8a12e167?auto=format&fit=crop&w=1434&q=80" alt="Project 5">
                     <div class="text">
-                        <h3>PROJECT 5</h4>
-                            <p>Short Description</p>
+                        <h3>PROJECT 5</h3>
                     </div>
-
                 </div>
 
-                <div class="item" id="6">
-                    <img src="https://images.unsplash.com/photo-1493962853295-0fd70327578a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f758b0379f730e73c03b6153aaad7cf1&auto=format&fit=crop&w=1350&q=80"
-                        alt="">
+                <div class="item" id="project-6" data-info="Onderhoudsvriendelijke tuin met duurzame beplanting.">
+                    <img src="https://images.unsplash.com/photo-1493962853295-0fd70327578a?auto=format&fit=crop&w=1350&q=80" alt="Project 6">
                     <div class="text">
-                        <h3>PROJECT 6</h4>
-                            <p>Short Description</p>
+                        <h3>PROJECT 6</h3>
                     </div>
-
                 </div>
-
             </div>
 
-            <!-- Modal -->
+            <!-- Project Modal -->
             <div id="preview" class="modal">
                 <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <img id="img" src="">
+                    <span class="close" id="closeModal">&times;</span>
+                    <img id="img" src="" alt="Project Preview">
                     <div id="details">
-                        <h3 id="title"></h3>
-                        <p id="info">Some text</p>
-                        <div class="button" id="live">View</div>
-                        <i class="fab fa-github-square" id="github"></i>
+                        <h3 id="modalTitle"></h3>
+                        <p id="info">Details over dit project...</p>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- <div id="projecten" class="projectenPage">
-            <div class="projectenTitle">
-                Onze Projecten
-            </div>
-            <div class="projectenGallery">
-                <div class="Project"></div>
-                <div class="Project"></div>
-                <div class="Project"></div>
-                <div class="Project"></div>
-                <div class="Project"></div>
-                <div class="Project"></div>
-            </div>
-        </div> -->
-        <div class="contactPage">
-            <div class="contactTitle">
-                Contacteer ons
+        <section id="contact" class="contactPage">
+            <div class="miniTitle">
+                <img src="LogoIcon.svg" alt="Icon" />Onze Diensten
             </div>
             <div class="contactContent">
                 <div class="contactenLeft">
                     <div class="HulpNodig">
-                        Hulp nodig bij jou<br>
-                        droom tuin?
+                        Hulp nodig bij jouw<br>droomtuin?
                     </div>
                     <div class="contactenTekstje">
-                        Lorem ipsum dolor sit amet consectetur. Amet eu nunc sed augue scelerisque sed eu nec. Lorem
-                        ipsum dolor sit amet consectetur. Amet eu nunc sed augue scelerisque sed eu nec.
+                        Aarzel niet om contact op te nemen voor een vrijblijvend gesprek of een offerte op maat van jouw project.
                     </div>
                 </div>
                 <div class="contactenRight">
                     <div class="contactRightTekst">
-                        Contacteer ons in verband<br>met jou project
+                        Contacteer ons in verband<br>met jouw project
                     </div>
-                    <a class="buttonMail" href="mailto:hello@example.com">
+                    <a class="buttonMail" href="mailto:">
                         <span class="buttonMailLeft">
-                            CoolEmailAdress
+                            EmailAdress@email.com
                         </span>
                         <span class="buttonMailRight">
                             <i class="fa-solid fa-paper-plane"></i>
                         </span>
                     </a>
-                    <a class="buttonPhone" href="tel:+91123-456-7890">
+                    <a class="buttonPhone" href="tel:">
                         <span class="buttonMailLeft">
-                            CoolEmailAdress
+                            TelefoonNummer
                         </span>
                         <span class="buttonMailRight">
-                            <i class="fa-solid fa-paper-plane"></i>
+                            <i class="fa-solid fa-phone"></i>
                         </span>
                     </a>
                 </div>
             </div>
-        </div>
+        </section>
     </div>
 
     <footer>
-        <p>&copy; 2026 My Website</p>
+        <p>&copy; 2026 Tuinrealisaties Van Craen. Alle rechten voorbehouden.</p>
     </footer>
 
 </body>
