@@ -1,6 +1,6 @@
 :root {
     /* Responsive Padding Variable */
-    --paddingSize: clamp(20px, 8vw, 180px);
+    --paddingSize: clamp(80px, 11vw, 300px);
 
     --GreenColor: #6B8B5A;
     --BlueColor: #162D40;
@@ -42,6 +42,62 @@ header {
     background-color: rgba(107, 139, 90, 0.92);
     backdrop-filter: blur(10px);
 }
+
+.mainTextDiv{
+    display: flex;
+    flex-direction: column;
+}
+
+.simpleButton {
+    display: inline-flex; /* Collapses container width to fit content */
+    align-items: center;
+    text-decoration: none !important;
+    gap: 10px;
+    width: fit-content;
+    padding-top: 22px;
+}
+
+.simpleButtonLeft {
+
+    display: flex;
+    align-items: center;
+    background-color: var(--BlueColor);
+    padding: 13px 18px; /* Slightly reduced for a sleeker look */
+    border-radius: 30px 10px 10px 30px;
+    color: #ffffff;
+    font-size: clamp(13px, 1.1vw, 16px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 16px;
+    transition: transform 0.3s ease;
+}
+.simpleButton:hover .simpleButtonLeft{
+    background-color: #0f202e;
+}
+
+
+.simpleButtonRight {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    padding: 13px 16px 13px 13px; /* Matches left side height */
+    border-radius: 10px 30px 30px 10px;
+    color: #ffffff;
+    font-size: 24px;
+}
+
+.simpleButtonRight i {
+    transform: rotate(-45deg);
+    transition: transform 0.5s ease;
+}
+
+.simpleButton:hover .simpleButtonRight i {
+    transform: rotate(0deg);
+}
+
+
 
 /* Mobile Menu Dark Backdrop Overlay */
 .menu-overlay {
@@ -156,7 +212,7 @@ header {
 }
 
 .SmallText {
-    max-width: 550px;
+    max-width: 400px;
     align-self: flex-end;
     text-align: right;
     font-family: "DM Mono", monospace;
@@ -220,9 +276,9 @@ header {
 
 /* Diensten Section */
 .dienstenPage {
-    min-height: 90vh;
+    min-height: 60vh;
     background: linear-gradient(180deg, rgba(107, 139, 90, 1) 0%, rgba(203, 219, 189, 1) 50%, rgba(203, 219, 189, 1) 100%);
-    padding: 100px var(--paddingSize);
+    padding: 80px var(--paddingSize);
 }
 
 .miniTitle {
@@ -231,7 +287,7 @@ header {
     align-items: center;
     margin-bottom: 25px;
     color: var(--BlueColor);
-    font-weight: bold;
+    font-weight: 500;
 }
 
 .miniTitle img {
@@ -262,6 +318,11 @@ header {
     padding: 16px 20px;
     cursor: pointer;
     transition: all 0.3s ease;
+}
+
+.card01:hover {
+    background-color: #8ba87b;
+    border-radius: 10px;
 }
 
 .card01.active {
@@ -296,15 +357,15 @@ header {
 .projectenPage {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    background-color: var(--LightBg);
+    
+    background: linear-gradient(180deg,rgba(203, 219, 189, 1) 0%, rgba(107, 139, 90, 1) 30%, rgba(107, 139, 90, 1) 100%);
+    background-color: var(--GreenColor);
     padding: 80px var(--paddingSize);
 }
 
 .projectenTitle {
     font-size: clamp(2rem, 3.5vw, 3rem);
-    font-family: "Playfair Display", serif;
-    font-weight: 600;
+    font-family: "DM Mono", monospace;
     color: #363638;
     margin-bottom: 20px;
     text-align: center;
@@ -321,9 +382,10 @@ header {
     position: relative;
     height: 380px; /* Increased height so larger cards maintain nice proportions */
     overflow: hidden;
-    border-radius: 20px;
+    border-radius: 18px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .item img {
@@ -333,13 +395,18 @@ header {
     transition: transform 0.35s ease, opacity 0.35s ease;
 }
 
+.item:hover{
+    border-radius: 10px;
+}
 .item:hover img {
-    opacity: 0.85;
+    opacity: 1;
     transform: scale(1.05);
 }
 
 .text {
     position: absolute;
+    font-family: "DM Mono", monospace;
+    font-weight: 400;
     bottom: 20px;
     left: 20px;
     z-index: 2;
@@ -349,6 +416,8 @@ header {
     color: #ffffff;
     font-size: 1.3rem;
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+    font-family: "DM Mono", monospace;
+    font-weight: 400;
 }
 
 /* Modal Popup */
@@ -463,14 +532,14 @@ header {
 .HulpNodig {
     font-size: clamp(2.2rem, 4.5vw, 4rem);
     line-height: 1.1em;
-    color: #111111;
+    color: var(--BlueColor);
     font-family: "Playfair Display", serif;
 }
 
 .contactenTekstje {
     font-size: clamp(1rem, 1.2vw, 1.25rem);
     margin-top: 20px;
-    color: #444444;
+    color: var(--GreenColor);
 }
 
 .contactenRight {
@@ -479,55 +548,115 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 40px;
+    padding: 30px;
     gap: 25px;
 }
 
 .contactRightTekst {
-    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    font-size: 40px;
     line-height: 1.2em;
     color: #ffffff;
 }
 
-.buttonMail, .buttonPhone {
-    display: flex;
+.simpleButton2 {
+    display: inline-flex; /* Collapses container width to fit content */
     align-items: center;
     text-decoration: none !important;
     gap: 10px;
+    width: fit-content;
+    padding-top: 0px;
 }
 
-.buttonMailLeft {
-    flex: 1;
+.simpleButtonLeft2 {
+
     display: flex;
     align-items: center;
     background-color: var(--BlueColor);
-    padding: 14px 20px;
+    padding: 13px 18px; /* Slightly reduced for a sleeker look */
     border-radius: 30px 10px 10px 30px;
     color: #ffffff;
     font-size: clamp(13px, 1.1vw, 16px);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    font-size: 16px;
+    transition: transform 0.3s ease;
+}
+.simpleButton2:hover .simpleButtonLeft2{
+    background-color: #0f202e;
 }
 
-.buttonMailRight {
+
+.simpleButtonRight2 {
     display: flex;
     justify-content: center;
     align-items: center;
     border: 2px solid rgba(255, 255, 255, 0.4);
-    padding: 14px 20px;
+    padding: 13px 16px 13px 13px; /* Matches left side height */
     border-radius: 10px 30px 30px 10px;
     color: #ffffff;
-    font-size: 18px;
+    font-size: 24px;
+}
+
+.simpleButtonRight2 i {
+    transform: rotate(-45deg);
+    transition: transform 0.5s ease;
+}
+
+.simpleButton2:hover .simpleButtonRight2 i {
+    transform: rotate(0deg);
+}
+
+.simpleButton2:hover .buttonMailRight i{
+    transform: rotate(0deg);
 }
 
 footer {
     text-align: center;
-    padding: 20px;
-    background-color: var(--GreenColor);
+    padding: 20px var(--paddingSize) 15px var(--paddingSize);
+    background-color: var(--BlueColor);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     color: #ffffff;
     font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footerLeft{
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+
+.footerLeft img {
+    max-height: 35px;
+    width: auto;
+    margin-right: 8px;
+    
+}
+
+.footerRight{
+    display: flex;
+    flex-direction: row;
+    gap: 26px;
+}
+
+.footerRight a{
+    text-decoration: none !important;
+}
+
+.inst, .face{
+    font-size: 35px;
+    color: var(--GreenColor);
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+.footerText{
+    font-size: 18px;
+    color: white;
+    display: block;
 }
 
 /* ==========================================
@@ -535,9 +664,13 @@ footer {
    ========================================== */
 
 @media (max-width: 992px) {
+
+    :root {
+        --paddingSize: clamp(20px, 8vw, 180px);
+    }
+
     .aboutPage {
         flex-direction: column;
-        text-align: center;
     }
 
     .aboutImage, .textAbout {
@@ -545,7 +678,22 @@ footer {
     }
 
     .dienstenContent {
-        flex-direction: column;
+        flex-direction: column-reverse;
+    }
+    .card01 {
+        padding: 8px 5px 8px 15px;
+    }
+
+    .Cards {
+        gap: 12px;
+    }
+
+    .cardTitle {
+        font-size: 20px;
+    }
+
+    .cardUitleg {
+        font-size: 16px;
     }
 
     .imageDiensten {
@@ -558,11 +706,39 @@ footer {
     .container {
         grid-template-columns: repeat(2, 1fr);
     }
+    .simpleButtonLeft2 {
+    font-size: 13px;
+}
+    .simpleButtonRight2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid rgba(255, 255, 255, 0.4);
+        padding: 12px 16px 12px 13px; /* Matches left side height */
+        border-radius: 10px 30px 30px 10px;
+        color: #ffffff;
+        font-size: 20px;
+    }
+
+    .contactenRight {
+        border-radius: 25px;
+        padding: 30px;
+    }
+
+    .footerText{
+    font-size: 18px;
+    color: white;
+    display: none;
+}
 }
 
 @media (max-width: 768px) {
     .hamburger {
         display: block;
+    }
+
+    :root {
+        --paddingSize: clamp(10px, 5vw, 80px);
     }
 
     /* Floating Card Mobile Menu */
@@ -593,6 +769,10 @@ footer {
     .container {
         grid-template-columns: 1fr;
     }
+
+    .MainText {
+    font-size: clamp(2.5rem, 5.5vw, 5rem);
+}
     
     .item {
         height: 300px; /* Scales down card height for smaller mobile screens */
@@ -605,11 +785,15 @@ footer {
     }
 
     .SmallText {
-        align-self: flex-start;
-        text-align: left;
+        padding-left: 40px;
     }
 
     .contactenRight {
         padding: 25px;
+    }
+
+    .contactenRight {
+        border-radius: 20px;
+        padding: 20px;
     }
 }

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+z`<!DOCTYPE html>
 <html lang="nl">
 
 <head>
@@ -8,6 +8,8 @@
 
     <!-- Page Title shown in the browser tab -->
     <title>Tuinrealisaties Van Craen</title>
+    <link rel="icon" type="image/svg+xml" href="FavIcon.svg">
+    <link rel="icon" href="/favicon.ico" sizes="any">
 
     <!-- External Stylesheets & Scripts -->
     <link rel="stylesheet" href="style.css">
@@ -25,7 +27,9 @@
 <body>
     <header>
         <div class="Logo">
-            <img src="FullLogo.svg" alt="Tuinrealisaties Van Craen Logo" />
+            <a href="#home">
+                <img src="FullLogo.svg" alt="Tuinrealisaties Van Craen Logo" />
+            </a>
         </div>
 
         <!-- Mobile Hamburger Icon -->
@@ -46,11 +50,20 @@
 
     <div id="home" class="content">
         <section class="homePage">
-            <div class="MainText">Een sprong vooruit <br> in <span class="mainTextColor">uw tuin</span></div>
+            <div class="mainTextDiv">
+                <div class="MainText">Een sprong vooruit<br>in <span class="mainTextColor">uw tuin</span></div>
+                <a class="simpleButton" href="#diensten">
+                    <span class="simpleButtonLeft">
+                        Onze Diensten
+                    </span>
+                    <span class="simpleButtonRight">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </span>
+                </a>
+            </div>
+            
             <div class="SmallText">
                 Van de kleinste snoeiwerken tot complete aanleg projecten: elk project krijgt dezelfde aandacht en zorg.
-                Een nieuw terras, een waterdoorlatende oprit, het onderhoud van je tuin of de aanleg van een idyllische zwemvijver?
-                Ik help je graag om jouw ideeën werkelijkheid te maken.
             </div>
         </section>
 
@@ -73,6 +86,14 @@
                     <br><br>
                     <strong>Jouw tuin, van idee tot realisatie.</strong>
                 </div>
+                <a class="simpleButton" href="#diensten">
+                    <span class="simpleButtonLeft">
+                        Bekijk Video
+                    </span>
+                    <span class="simpleButtonRight">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </span>
+                </a>
             </div>
         </section>
 
@@ -82,28 +103,28 @@
             </div>
             <div class="dienstenContent">
                 <div class="Cards">
-                    <div class="card01 active" data-image="AanlegImage01.jpeg">
+                    <div class="card01 active" data-image="AanlegImageGoed.jpeg">
                         <div class="cardTitle TitleFont">Aanleg</div>
                         <div class="cardUitleg">
                             Van grondwerken en beplanting tot gazons, afsluitingen en de volledige realisatie van je tuin.
                         </div>
                     </div>
 
-                    <div class="card01" data-image="https://picsum.photos/id/28/800/600">
+                    <div class="card01" data-image="VerhardingenImageGoed.jpeg">
                         <div class="cardTitle TitleFont">Verhardingen</div>
                         <div class="cardUitleg">
                             Terrassen, tuinpaden en (waterdoorlatende) opritten in verschillende materialen.
                         </div>
                     </div>
 
-                    <div class="card01" data-image="OnderhoudImage01.jpeg">
+                    <div class="card01" data-image="OnderhoudImageGoed.jpeg">
                         <div class="cardTitle TitleFont">Onderhoud</div>
                         <div class="cardUitleg">
                             Snoeiwerken, aangepast bemestingsadvies, gazon onderhoud en periodiek onderhoud.
                         </div>
                     </div>
 
-                    <div class="card01" data-image="VerhardingenImage01.jpeg">
+                    <div class="card01" data-image="ZwemvijverImageGoed.jpeg">
                         <div class="cardTitle TitleFont">Zwemvijver</div>
                         <div class="cardUitleg">
                             Natuurlijke zwemvijvers op maat geïntegreerd in de omgeving van je tuin.
@@ -121,45 +142,38 @@
             </div>
 
             <div class="container">
-                <div class="item" id="project-1" data-info="Prachtig afgewerkt terras- en tuinproject met moderne beplanting.">
-                    <img src="https://images.unsplash.com/photo-1508124780861-b1687f9a13e5?auto=format&fit=crop&w=1385&q=80" alt="Project 1">
+                <div class="item" id="project-1" data-info="PROJECT 1">
+                    <img src="ProjectOne01.jpeg" alt="Project 1">
                     <div class="text">
                         <h3>PROJECT 1</h3>
                     </div>
                 </div>
 
-                <div class="item" id="project-2" data-info="Aanleg van een strakke, waterdoorlatende oprit.">
-                    <img src="https://images.unsplash.com/photo-1496492352121-593138d42a61?auto=format&fit=crop&w=1350&q=80" alt="Project 2">
+                <div class="item" id="project-2" data-info="PROJECT 2">
+                    <img src="ProjectTwo01.jpeg" alt="Project 2">
                     <div class="text">
                         <h3>PROJECT 2</h3>
                     </div>
                 </div>
 
-                <div class="item" id="project-3" data-info="Complete tuinrenovatie inclusief snoeiwerken en gazononderhoud.">
-                    <img src="https://images.unsplash.com/photo-1515215676803-119c88d493cf?auto=format&fit=crop&w=1350&q=80" alt="Project 3">
+                <div class="item" id="project-3" data-info="PROJECT 3">
+                    <img src="ProjectThree01.jpeg" alt="Project 3">
                     <div class="text">
                         <h3>PROJECT 3</h3>
                     </div>
                 </div>
 
-                <div class="item" id="project-4" data-info="Sfeervolle ecologische zwemvijver met hardhouten vlonder.">
-                    <img src="https://images.unsplash.com/photo-1496939217462-7d42e9a74f0e?auto=format&fit=crop&w=1350&q=80" alt="Project 4">
+                <div class="item" id="project-4" data-info="PROJECT 4">
+                    <img src="ProjectFour01.jpeg" alt="Project 4">
                     <div class="text">
                         <h3>PROJECT 4</h3>
                     </div>
                 </div>
 
-                <div class="item" id="project-5" data-info="Tuinaanleg met karakteristieke houten afsluiting.">
-                    <img src="https://images.unsplash.com/photo-1504875427817-937a8a12e167?auto=format&fit=crop&w=1434&q=80" alt="Project 5">
+                <div class="item" id="project-5" data-info="PROJECT 5">
+                    <img src="ProjectFive01.jpeg" alt="Project 5">
                     <div class="text">
                         <h3>PROJECT 5</h3>
-                    </div>
-                </div>
-
-                <div class="item" id="project-6" data-info="Onderhoudsvriendelijke tuin met duurzame beplanting.">
-                    <img src="https://images.unsplash.com/photo-1493962853295-0fd70327578a?auto=format&fit=crop&w=1350&q=80" alt="Project 6">
-                    <div class="text">
-                        <h3>PROJECT 6</h3>
                     </div>
                 </div>
             </div>
@@ -179,7 +193,7 @@
 
         <section id="contact" class="contactPage">
             <div class="miniTitle">
-                <img src="LogoIcon.svg" alt="Icon" />Onze Diensten
+                <img src="LogoIcon.svg" alt="Icon" />Contacteer Ons!
             </div>
             <div class="contactContent">
                 <div class="contactenLeft">
@@ -187,36 +201,57 @@
                         Hulp nodig bij jouw<br>droomtuin?
                     </div>
                     <div class="contactenTekstje">
-                        Aarzel niet om contact op te nemen voor een vrijblijvend gesprek of een offerte op maat van jouw project.
+                        Aarzel niet om contact op te nemen voor een gesprek of een offerte op maat van jouw project.
                     </div>
                 </div>
                 <div class="contactenRight">
-                    <div class="contactRightTekst">
+                    <div class="contactRightTekst2">
                         Contacteer ons in verband<br>met jouw project
                     </div>
-                    <a class="buttonMail" href="mailto:">
-                        <span class="buttonMailLeft">
-                            EmailAdress@email.com
+
+                    <a class="simpleButton2" href="tel:+32493594804">
+                        <span class="simpleButtonLeft2">
+                            +32493594804
                         </span>
-                        <span class="buttonMailRight">
-                            <i class="fa-solid fa-paper-plane"></i>
-                        </span>
-                    </a>
-                    <a class="buttonPhone" href="tel:">
-                        <span class="buttonMailLeft">
-                            TelefoonNummer
-                        </span>
-                        <span class="buttonMailRight">
-                            <i class="fa-solid fa-phone"></i>
+                        <span class="simpleButtonRight2">
+                            <i class="fa-solid fa-arrow-right"></i>
                         </span>
                     </a>
+                     <a class="simpleButton2" href="mailto:tuinrealisatiesvancraen@gmail.com">
+                        <span class="simpleButtonLeft2">
+                            Tuinrealisatiesvancraen@gmail.com
+                        </span>
+                        <span class="simpleButtonRight2">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </span>
+                    </a>
+
+                    
                 </div>
             </div>
         </section>
     </div>
 
     <footer>
-        <p>&copy; 2026 Tuinrealisaties Van Craen. Alle rechten voorbehouden.</p>
+        <div class="footerLeft">
+            <img src="FavIcon.svg" alt="Icon" />
+            Tuinrealisaties van Craen
+        </div>
+        <div class="footerRight">
+            <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/tuinrealisatiesvancraen">
+                <div class="inst">
+                <i class="fa-brands fa-instagram"></i>
+                <div class="footerText">Instagram</div>
+            </div>
+            </a>
+            
+            <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/share/14v6eqAkppb/">
+                <div class="face">
+                <i class="fa-brands fa-square-facebook"></i>
+                <div class="footerText">Facebook</div>
+            </div>
+            </a>
+        </div>
     </footer>
 
 </body>
