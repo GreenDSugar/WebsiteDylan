@@ -1,5 +1,4 @@
 :root {
-    /* Responsive Padding Variable */
     --paddingSize: clamp(80px, 11vw, 300px);
 
     --GreenColor: #6B8B5A;
@@ -26,7 +25,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Header & Navigation */
 header {
     position: fixed;
     top: 0; 
@@ -49,7 +47,7 @@ header {
 }
 
 .simpleButton {
-    display: inline-flex; /* Collapses container width to fit content */
+    display: inline-flex; 
     align-items: center;
     text-decoration: none !important;
     gap: 10px;
@@ -62,7 +60,7 @@ header {
     display: flex;
     align-items: center;
     background-color: var(--BlueColor);
-    padding: 13px 18px; /* Slightly reduced for a sleeker look */
+    padding: 13px 18px; 
     border-radius: 30px 10px 10px 30px;
     color: #ffffff;
     font-size: clamp(13px, 1.1vw, 16px);
@@ -82,7 +80,7 @@ header {
     justify-content: center;
     align-items: center;
     border: 2px solid rgba(255, 255, 255, 0.4);
-    padding: 13px 16px 13px 13px; /* Matches left side height */
+    padding: 13px 16px 13px 13px; 
     border-radius: 10px 30px 30px 10px;
     color: #ffffff;
     font-size: 24px;
@@ -99,7 +97,7 @@ header {
 
 
 
-/* Mobile Menu Dark Backdrop Overlay */
+
 .menu-overlay {
     position: fixed;
     top: 0;
@@ -108,7 +106,7 @@ header {
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(3px);
-    z-index: 999; /* Below header (1000), above page content */
+    z-index: 999; 
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -165,7 +163,6 @@ header {
     background-color: #0f202e;
 }
 
-/* Hamburger Menu Button */
 .hamburger {
     display: none;
     background: none;
@@ -175,7 +172,6 @@ header {
     cursor: pointer;
 }
 
-/* Home Section */
 .homePage {
     min-height: 100vh;
     padding: 120px var(--paddingSize) 60px var(--paddingSize);
@@ -222,7 +218,6 @@ header {
     font-size: clamp(14px, 1.2vw, 16px);
 }
 
-/* About Section */
 .aboutPage {
     background-color: var(--GreenColor);
     min-height: 80vh;
@@ -288,7 +283,7 @@ header {
     line-height: 1.5em;
 }
 
-/* Diensten Section */
+
 .dienstenPage {
     min-height: 60vh;
     background: linear-gradient(180deg, rgba(107, 139, 90, 1) 0%, rgba(203, 219, 189, 1) 50%, rgba(203, 219, 189, 1) 100%);
@@ -367,7 +362,6 @@ header {
     transition: background-image 0.4s ease-in-out;
 }
 
-/* Projecten Section */
 .projectenPage {
     display: flex;
     flex-direction: column;
@@ -387,14 +381,14 @@ header {
 
 .container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Maximum 3 items per row on desktop */
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     width: 100%;
 }
 
 .item {
     position: relative;
-    height: 380px; /* Increased height so larger cards maintain nice proportions */
+    height: 380px;
     overflow: hidden;
     border-radius: 18px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -434,7 +428,6 @@ header {
     font-weight: 400;
 }
 
-/* Modal Popup */
 .modal {
     display: none;
     position: fixed;
@@ -524,7 +517,6 @@ header {
     color: #ddd;
 }
 
-/* Contact Section */
 .contactPage {
     padding: 80px var(--paddingSize);
     background-color: rgba(203, 219, 189, 1);
@@ -573,7 +565,7 @@ header {
 }
 
 .simpleButton2 {
-    display: inline-flex; /* Collapses container width to fit content */
+    display: inline-flex;
     align-items: center;
     text-decoration: none !important;
     gap: 10px;
@@ -586,7 +578,7 @@ header {
     display: flex;
     align-items: center;
     background-color: var(--BlueColor);
-    padding: 13px 18px; /* Slightly reduced for a sleeker look */
+    padding: 13px 18px; 
     border-radius: 30px 10px 10px 30px;
     color: #ffffff;
     font-size: clamp(13px, 1.1vw, 16px);
@@ -606,7 +598,7 @@ header {
     justify-content: center;
     align-items: center;
     border: 2px solid rgba(255, 255, 255, 0.4);
-    padding: 13px 16px 13px 13px; /* Matches left side height */
+    padding: 13px 16px 13px 13px; 
     border-radius: 10px 30px 30px 10px;
     color: #ffffff;
     font-size: 24px;
@@ -672,10 +664,6 @@ footer {
     color: white;
     display: block;
 }
-
-/* ==========================================
-   RESPONSIVE MEDIA QUERIES (Breakpoints)
-   ========================================== */
 
 @media (max-width: 992px) {
 
@@ -744,7 +732,7 @@ footer {
         justify-content: center;
         align-items: center;
         border: 2px solid rgba(255, 255, 255, 0.4);
-        padding: 12px 16px 12px 13px; /* Matches left side height */
+        padding: 12px 16px 12px 13px; 
         border-radius: 10px 30px 30px 10px;
         color: #ffffff;
         font-size: 20px;
@@ -771,28 +759,24 @@ footer {
         --paddingSize: clamp(10px, 5vw, 80px);
     }
 
-    /* Floating Card Mobile Menu */
     .HeaderElements {
         position: fixed;
-        top: 80px; /* Leaves a 10px gap below the 70px header */
+        top: 80px; 
         left: 15px;
         right: 15px;
-        width: auto; /* Pulls in from left and right edges */
+        width: auto;
         background-color: rgba(107, 139, 90, 0.8);
         backdrop-filter: blur(20px);
-        border-radius: 20px; /* Rounded floating card shape */
+        border-radius: 20px; 
         flex-direction: column;
         align-items: center;
         padding: 30px 20px;
         gap: 25px;
         
-        /* Smooth fade & slide transition */
         opacity: 0;
         visibility: hidden;
         transform: translateY(-15px);
         transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
-        
-        /* Deeper shadow to elevate it off the content */
         box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
     }
 
@@ -805,7 +789,7 @@ footer {
 }
     
     .item {
-        height: 300px; /* Scales down card height for smaller mobile screens */
+        height: 300px; 
     }
 
     .HeaderElements.active {
