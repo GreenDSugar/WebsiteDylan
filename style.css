@@ -249,6 +249,20 @@ header {
     display: block;
 }
 
+.aboutImageSmall {
+    display: None;
+    justify-content: center;
+}
+
+.aboutImageSmall img {
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    border-radius: 30px;
+    object-fit: cover;
+    display: None;
+}
+
 .textAbout {
     width: 55%;
     display: flex;
@@ -676,6 +690,22 @@ footer {
     .aboutImage, .textAbout {
         width: 100%;
     }
+
+    .aboutImage {
+    display: none;
+}
+
+.aboutImage img {
+    display: none;
+}
+
+.aboutImageSmall {
+    display: flex;
+}
+
+.aboutImageSmall img {
+    display: block;
+}
 
     .dienstenContent {
         flex-direction: column-reverse;
